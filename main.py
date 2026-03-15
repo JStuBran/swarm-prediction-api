@@ -204,7 +204,7 @@ async def run_swarm_simulation(
     # ── Phase 2: Run simulation rounds ───────────────────────────────────────
     # We run parallel batches of agents per round via LLM
     # Each batch = one LLM call simulating N agents
-    BATCH_SIZE = 20  # agents per LLM call
+    BATCH_SIZE = 10  # agents per LLM call
     ROUNDS_PER_LLM_CALL = min(rounds, 5)  # compress rounds for efficiency
     
     all_actions = []
@@ -220,7 +220,7 @@ async def run_swarm_simulation(
     batches = [sampled_agents[i:i+BATCH_SIZE] for i in range(0, len(sampled_agents), BATCH_SIZE)]
     
     simulation_tasks = []
-    for batch_idx, batch in enumerate(batches[:3]):  # limit to 3 batches for speed
+    for batch_idx, batch in enumerate(batches[:2]):  # limit to 3 batches for speed
         task = _simulate_agent_batch(
             seed_text=seed_text,
             agents=batch,
@@ -318,7 +318,7 @@ Return ONLY valid JSON array, no markdown."""
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.8,
-            max_tokens=3000,
+            max_tokens=4096,
             response_format={"type": "json_object"} if "gpt" in LLM_MODEL else None,
         )
         
