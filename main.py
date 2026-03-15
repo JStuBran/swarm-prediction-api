@@ -31,7 +31,7 @@ WALLET_ADDRESS = os.environ.get("WALLET_ADDRESS", "")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "")
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1")
 LLM_MODEL = os.environ.get("LLM_MODEL_NAME", "gpt-4o-mini")
-PRICE_PER_CALL_USD = 0.25
+PRICE_PER_CALL_USD = 0.50
 
 # ─── x402 Payment Middleware ──────────────────────────────────────────────────
 
@@ -564,7 +564,7 @@ async def predict(body: PredictRequest):
     """
     Run a MiroFish swarm intelligence simulation and return a prediction report.
     
-    Requires x-payment header with valid x402 payment on Base USDC ($0.25).
+    Requires x-payment header with valid x402 payment on Base USDC ($0.50).
     """
     prediction_id = str(uuid.uuid4())
     logger.info(f"[{prediction_id}] Predict request: agents={body.num_agents}, rounds={body.rounds}, topic={body.seed_text[:60]}...")

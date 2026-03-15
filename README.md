@@ -2,14 +2,14 @@
 
 A monetized prediction API powered by the **MiroFish swarm intelligence engine**. Spawns multi-agent simulations where diverse AI agents debate, analyze, and collectively predict outcomes — then returns a structured prediction report.
 
-Payments powered by **x402** on Base USDC ($0.25/call).
+Payments powered by **x402** on Base USDC ($0.50/call).
 
 ## Features
 
 - 🤖 **Multi-agent swarm simulation** — 10-500 agents with diverse roles (Analyst, Skeptic, Expert, Journalist, Activist, etc.)
 - 🔄 **Multi-round emergent behavior** — agents build on each other's outputs across rounds
 - 📊 **Structured prediction reports** — narratives, trends, sentiment distribution, and sample agent actions
-- 💳 **x402 payments** — $0.25/call on Base USDC, no API keys needed for callers
+- 💳 **x402 payments** — $0.50/call on Base USDC, no API keys needed for callers
 - 🔌 **MCP compatible** — discoverable via `/mcp` endpoint
 
 ## Quick Start
@@ -136,7 +136,7 @@ The API mirrors the **MiroFish OASIS simulation engine**:
 This API uses the [x402 payment protocol](https://github.com/coinbase/x402):
 
 1. Call `POST /api/predict` without payment → receive `402 Payment Required` with payment details
-2. Pay $0.25 USDC on Base to the wallet address
+2. Pay $0.50 USDC on Base to the wallet address
 3. Include payment proof in `x-payment` header
 4. Get your prediction
 
