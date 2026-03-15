@@ -1,0 +1,30 @@
+# ===========================================
+# Swarm Prediction API Dependencies
+# ===========================================
+# Python 3.11+ required
+# ===========================================
+
+# ─── Web framework ───────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.0.0
+
+# ─── LLM client (matches MiroFish) ───────
+openai>=1.0.0
+
+# ─── Environment ─────────────────────────
+python-dotenv>=1.0.0
+
+# ─── x402 payment ────────────────────────
+# coinbase/x402 Python SDK (when available)
+# For now we implement the protocol directly
+httpx>=0.27.0
+
+# ─── MiroFish backend (optional, for full OASIS simulation) ──
+# Uncomment to enable full OASIS simulation engine:
+# camel-oasis==0.2.5
+# camel-ai==0.2.78
+# zep-cloud==3.13.0
+# PyMuPDF>=1.24.0
+# flask>=3.0.0
+# charset-normalizer>=3.0.0
